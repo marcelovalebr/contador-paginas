@@ -4,9 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import time
 from datetime import date
-import requests  # Importa a biblioteca requests para fazer solicitações HTTP
+import requests  
 
-chrome_driver_path = '/Users/sgtvale/Desktop/Dev/chromedriver'
+chrome_driver_path = ''
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')  
