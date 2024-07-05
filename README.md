@@ -1,22 +1,70 @@
-Contador de Impressões
+# Contador de Impressoras com Relatório Diário
 
-Este projeto consiste em um script em Python que automatiza a coleta de contadores de impressões de diversas impressoras de uma rede, utilizando a biblioteca Selenium. O objetivo é facilitar o monitoramento e a gestão dos volumes de impressão em diferentes equipamentos.
+Este projeto é um script em Python que coleta contadores de diversas impressoras, gera um relatório e envia esse relatório para um canal do Telegram. Ele utiliza a biblioteca Selenium para automatizar a interação com as interfaces web das impressoras e a biblioteca Requests para enviar o relatório via API do Telegram.
 
-Funcionalidades
+## Funcionalidades
 
-O script realiza as seguintes tarefas:
+- Coleta contadores de várias impressoras de diferentes marcas e modelos.
+- Gera um relatório com os contadores coletados.
+- Envia o relatório gerado para um canal do Telegram.
 
-1. Acessa remotamente as interfaces web das impressoras.
-2. Localiza os contadores de impressões nas páginas web das impressoras.
-3. Extrai os contadores de impressões.
-4. Gera um relatório consolidado com os contadores de todas as impressoras monitoradas.
-5. Salva o relatório em um arquivo de texto com a data atual no nome do arquivo.
+## Impressoras Suportadas
 
-Observações
+- Lexmark MX611dhe
+- Lexmark CX421adn
+- Samsung SL-M4070FR
+- HP LaserJet Pro MFP M428fdw
+- HP LaserJet MFP M127 Fn
+- HP LaserJet MFP M130fw
+- HP LaserJet 400 M401dne
 
-Este projeto foi desenvolvido para facilitar o monitoramento de contadores de impressão em uma rede específica. Modificações podem ser necessárias para adaptá-lo a diferentes ambientes e modelos de impressoras.
-Certifique-se de ter permissão para acessar as interfaces web das impressoras. O uso deste script pode estar sujeito às políticas de segurança e privacidade da sua organização. Certifique-se de estar em conformidade com essas políticas antes de utilizar o script em um ambiente de produção.
+## Pré-requisitos
 
-Autor
+- Python 3.x
+- Bibliotecas Python:
+  - `selenium`
+  - `requests`
+- ChromeDriver (compatível com a versão do seu Google Chrome instalado)
 
-Este projeto foi desenvolvido por Marcelo Vale.
+## Instalação
+
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    cd seu-repositorio
+    ```
+
+2. Instale as dependências:
+    ```bash
+    pip install selenium requests
+    ```
+
+3. Baixe o ChromeDriver a partir de [aqui](https://sites.google.com/a/chromium.org/chromedriver/downloads) e coloque o caminho do ChromeDriver na variável `chrome_driver_path` no script.
+
+## Configuração
+
+1. Defina o caminho do ChromeDriver no script:
+    ```python
+    chrome_driver_path = '/caminho/para/seu/chromedriver'
+    ```
+
+2. Configure seu token de bot do Telegram e o ID do chat:
+    ```python
+    bot_token = 'seu_token_do_bot'
+    chat_id = 'seu_id_do_chat'
+    ```
+
+## Uso
+
+1. Execute o script:
+    ```bash
+    python seu_script.py
+    ```
+
+2. O script coletará os contadores das impressoras configuradas, gerará um relatório e enviará o relatório para o canal do Telegram configurado.
+
+## Estrutura do Código
+
+- Funções para obter contadores de diferentes modelos de impressoras.
+- Função para gerar um relatório combinado com os contadores coletados.
+- Função para enviar o relatório para um canal do Telegram.
