@@ -1,70 +1,95 @@
-# Contador de Impressoras com Relatório Diário
 
-Este projeto é um script em Python que coleta contadores de diversas impressoras, gera um relatório e envia esse relatório para um canal do Telegram. Ele utiliza a biblioteca Selenium para automatizar a interação com as interfaces web das impressoras e a biblioteca Requests para enviar o relatório via API do Telegram.
+# 🖨️ Automação de Coleta de Contadores de Impressoras
 
-## Funcionalidades
+Script em **Python** que utiliza **Selenium** para automatizar a **coleta diária de contadores de impressoras** e enviar **relatórios via Telegram**.
 
-- Coleta contadores de várias impressoras de diferentes marcas e modelos.
-- Gera um relatório com os contadores coletados.
-- Envia o relatório gerado para um canal do Telegram.
+Desenvolvido para ambientes de **Infraestrutura Crítica**, com foco em **eficiência operacional**, **redução de falhas humanas** e **monitoramento automatizado** de diversos modelos de impressoras.
 
-## Impressoras Suportadas
+---
 
-- Lexmark MX611dhe
-- Lexmark CX421adn
-- Samsung SL-M4070FR
-- HP LaserJet Pro MFP M428fdw
-- HP LaserJet MFP M127 Fn
-- HP LaserJet MFP M130fw
+## 🚀 Funcionalidades
+
+✅ Coleta automatizada de contadores de diversas impressoras (Lexmark, HP, Samsung).  
+✅ Utiliza **Selenium** para navegação web e extração de dados.  
+✅ Geração de **relatório consolidado** com informações coletadas.  
+✅ Envio automático do relatório via **Telegram Bot**.  
+✅ Execução em modo **headless** (sem interface gráfica).
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- **Python 3.x**  
+- **Selenium**  
+- **requests** (integração com API do Telegram)  
+- **Chrome WebDriver**
+
+---
+
+## ⚙️ Como usar
+
+1. Clone este repositório:  
+```bash
+git clone https://github.com/marcelovalebr/contador-paginas.git
+cd contador-paginas
+```
+
+2. Instale as dependências:  
+```bash
+pip install selenium requests
+```
+
+3. Configure o **`chrome_driver_path`** no script para apontar para o local do **ChromeDriver** na sua máquina.
+
+4. Configure o **bot token** e o **chat ID** do **Telegram** no final do script:  
+```python
+bot_token = 'SEU_TOKEN'
+chat_id = 'SEU_CHAT_ID'
+```
+
+5. Execute o script:  
+```bash
+python contador_paginas.py
+```
+
+---
+
+## 📊 Impressoras suportadas
+
+- Lexmark MX611dhe  
+- Lexmark CX421adn  
+- Samsung SL-M4070FR  
+- HP LaserJet Pro MFP M428fdw  
+- HP LaserJet MFP M127 Fn  
+- HP LaserJet MFP M130fw  
 - HP LaserJet 400 M401dne
 
-## Pré-requisitos
+---
 
-- Python 3.x
-- Bibliotecas Python:
-  - `selenium`
-  - `requests`
-- ChromeDriver (compatível com a versão do seu Google Chrome instalado)
+## 🛡️ Aplicações práticas
 
-## Instalação
+✅ Monitoramento automatizado de **parques de impressoras**.  
+✅ **Relatórios periódicos** enviados via Telegram para equipes de suporte.  
+✅ Redução de **trabalho manual** e **minimização de falhas**.  
+✅ Uso em ambientes com necessidade de **disponibilidade e controle rigoroso**.
 
-1. Clone o repositório:
-    ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    cd seu-repositorio
-    ```
+---
 
-2. Instale as dependências:
-    ```bash
-    pip install selenium requests
-    ```
+## 👨‍💻 Autor
 
-3. Baixe o ChromeDriver a partir de [aqui](https://sites.google.com/a/chromium.org/chromedriver/downloads) e coloque o caminho do ChromeDriver na variável `chrome_driver_path` no script.
+**Marcelo Vale**  
+Especialista em Segurança da Informação | Automação de Processos | Infraestrutura Crítica  
 
-## Configuração
+[GitHub](https://github.com/marcelovalebr) | [LinkedIn](https://www.linkedin.com/in/marcelovalebr/)
 
-1. Defina o caminho do ChromeDriver no script:
-    ```python
-    chrome_driver_path = '/caminho/para/seu/chromedriver'
-    ```
+---
 
-2. Configure seu token de bot do Telegram e o ID do chat:
-    ```python
-    bot_token = 'seu_token_do_bot'
-    chat_id = 'seu_id_do_chat'
-    ```
+## 📝 Licença
 
-## Uso
+Este projeto está licenciado sob a **MIT License** — veja o arquivo **LICENSE** para mais detalhes.
 
-1. Execute o script:
-    ```bash
-    python seu_script.py
-    ```
+---
 
-2. O script coletará os contadores das impressoras configuradas, gerará um relatório e enviará o relatório para o canal do Telegram configurado.
+## 🤝 Contribuições
 
-## Estrutura do Código
-
-- Funções para obter contadores de diferentes modelos de impressoras.
-- Função para gerar um relatório combinado com os contadores coletados.
-- Função para enviar o relatório para um canal do Telegram.
+Contribuições são bem-vindas! Sinta-se à vontade para **forkar** e sugerir melhorias.
